@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="/media/favicon.ico">
 
     <title>HBS - Analyst Programmer, Project Manager</title>
 
@@ -32,6 +32,7 @@
     $( function() {
       $( "#dialog" ).dialog({
         autoOpen: false,
+        modal: true,
         width: 750,
         show: {
           effect: "blind",
@@ -46,7 +47,7 @@
 
     function opendialog(newtitle, newtext) {
         $( "#dialog" ).dialog({ title: newtitle });
-        $(' #dialog' ).text(newtext);
+        $(' #dialog' ).html( newtext );
         $( "#dialog" ).dialog( "open" );
     }
     </script>
@@ -57,7 +58,7 @@
     <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
   </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">Howard Brian Selfe</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -65,7 +66,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="about">About</a>
-          <a class="nav-item nav-link" href="cv">Resume</a>
+          <a class="nav-item nav-link" href="cv">Resumé</a>
           <a class="nav-item nav-link" href="references">References</a>
           <a class="nav-item nav-link" href="/blog">Blog</a>
           <a class="nav-item nav-link" href="contact">Contact</a>
@@ -77,12 +78,10 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Analyst Programmer, Project Manager</h1>
-          <p class="lead text-muted">I have a BSc (Honours) degree, with majors in Computer Science and Applied Mathematics. I consult through Upwork on a full-time basis in the Analyst, Design, Programmer and PM arenas. On the Upwork platform I have had Top Rated status for more than 2 years, and I have a Job Success Score that is still 100% after more than 32 jobs and 7 years full-time.</p>
-          <p>
+          <h1 class="jumbotron-heading">{% for home in homes.all %}{{ home.header | safe }}{% endfor %}</h1>
+          <div class="lead text-muted">{% for home in homes.all %}{{ home.fulltext | safe }}{% endfor %}</div>
             <a href="https://www.upwork.com/freelancers/~01532174a0ddfe06a1?viewMode=1" class="btn btn-primary my-2" target="_blank">Upwork Profile</a>
             <a href="contact" class="btn btn-primary my-2">Make Contact</a>
-          </p>
         </div>
       </section>
 
@@ -98,8 +97,8 @@
                   <p class="card-text">{{ job.summary }}</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" onClick="opendialog('{{ job.summary }}', '{{ job.fulltext }}');">Details</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary" onClick="opendialog('{{ job.summary }}', '{{ job.feedback }}');">Feedback</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onClick="opendialog('{{ job.summary | safe }}', '{{ job.fulltext | safe }}');">Details</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onClick="opendialog('{{ job.summary | safe }}', '{{ job.feedback | safe }}');">Feedback</button>
                     </div>
                   </div>
                 </div>

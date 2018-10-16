@@ -6,3 +6,7 @@ class Blog(models.Model):
     pub_date = models.DateField(auto_now=True)
     body = models.TextField()
     image = models.ImageField(upload_to='images/')
+    link_url = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title

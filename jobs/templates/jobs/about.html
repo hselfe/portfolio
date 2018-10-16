@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="/media/favicon.ico">
 
     <title>HBS - About Me</title>
 
@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active" href="about">About</a>
-          <a class="nav-item nav-link" href="cv">Resume</a>
+          <a class="nav-item nav-link" href="cv">Resumé</a>
           <a class="nav-item nav-link" href="references">References</a>
           <a class="nav-item nav-link" href="/blog">Blog</a>
           <a class="nav-item nav-link" href="contact">Contact</a>
@@ -35,9 +35,9 @@
 
       <div class="container mt-5">
            <h1>A little on my background:</h1>
-           <p class="lead">Upwork information</p>
+           <p class="lead">Background information</p>
            <section class="bg-success text-white clearfix mb-3">
-             <img src="http://127.0.0.1:8000/media/images/hbs-2018.jpg" width="300px;" alt="" class="img-fluid rounded-circle float-left float-sm-right float-md-left float-lg-
+             <img src="/media/images/hbs-2018.jpg" width="300px;" alt="" class="img-fluid rounded-circle float-left float-sm-right float-md-left float-lg-
              right float-xl-left p-5">
              <p>&nbsp;</p>
              {% for about in abouts.all %}{{ about.headertext | safe }}{% endfor %}
@@ -48,7 +48,7 @@
       <div class="album py-5 bg-light">
         <div class="container">
           <h1>A little on my technical background:</h1>
-          <p class="lead" information>Technical skill-suite</p>
+          <p class="lead" information>Technical skill-set</p>
           <p class="lead text-muted">{% for about in abouts.all %}{{ about.fulltext | safe }}{% endfor %}</p>
           <p>
             <a href="https://www.upwork.com/freelancers/~01532174a0ddfe06a1?viewMode=1" class="btn btn-primary my-2" target="_blank">Upwork Profile</a>
