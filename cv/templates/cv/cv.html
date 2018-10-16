@@ -7,13 +7,18 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>HBS References</title>
+    <title>HBS - About Me</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-  </head>
+    <style>
+      .bg-success {
+          background-color: #0a3c4f!important;
+        }
+    </style>
 
+  </head>
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -33,30 +38,27 @@
 
     <main role="main">
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Analyst Programmer, Project Manager : Some References</h1>
-        </div>
-      </section>
+      <div class="container mt-5">
+           <h1>Curriculum Vitae:</h1>
+           <p class="lead">Career information</p>
+           <section class="bg-success text-white clearfix mb-3">
+             <img src="http://127.0.0.1:8000/media/images/hbs-2018.jpg" width="300px;" alt="" class="img-fluid rounded-circle float-left float-sm-right float-md-left float-lg-
+             right float-xl-left p-5">
+             <p>&nbsp;</p>
+             {% for cv in cvs.all %}{{ cv.cv_header | safe }}{% endfor %}
+             <p>&nbsp;</p>
+         </section>
+      </div>
 
       <div class="album py-5 bg-light">
         <div class="container">
-
-          <div class="row">
-            {% for reference in references.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm" style="height: 310px;">
-                <img class="card-img-top" src="{{ reference.image.url }}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text"><strong>{{ reference.company }}</strong><br>{{ reference.reference_name }}<br>{{ reference.email_address }}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-
+          <h1>Curriculum Vitae:</h1>
+          <p class="lead" information>HOWARD BRIAN SELFE</p>
+          <p class="lead text-muted">{% for cv in cvs.all %}{{ cv.cv_text | safe }}{% endfor %}</p>
+          <p>
+            <a href="https://www.upwork.com/freelancers/~01532174a0ddfe06a1?viewMode=1" class="btn btn-primary my-2" target="_blank">Upwork Profile</a>
+            <a href="contact" class="btn btn-primary my-2">Make Contact</a>
+          </p>
         </div>
       </div>
 

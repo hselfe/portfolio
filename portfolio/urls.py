@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 import jobs.views
+import cv.views
 import references.views
 
 urlpatterns = [
@@ -25,5 +26,6 @@ urlpatterns = [
     path('', jobs.views.home, name ='home'),
     path('about', jobs.views.about, name ='about'),
     path('references', references.views.references, name ='references'),
+    path('cv', cv.views.cv, name ='cv'),
     path('contact', jobs.views.contact, name ='contact'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

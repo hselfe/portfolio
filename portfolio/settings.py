@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs.apps.JobsConfig',
     'references.apps.ReferencesConfig',
+    'cv.apps.CVConfig',
     'blog.apps.BlogConfig',
 ]
 
